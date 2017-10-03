@@ -13,7 +13,7 @@ function api(){
 		//return res.json(x);
 
 		//add uma linha só pra funcionar o json, pode desconsiderar/apagar
-		return {'result':cotacao};
+		return Cambio.findOne( query ).exec()
 	};
 }
 
