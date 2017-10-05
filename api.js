@@ -5,6 +5,8 @@ mongoose.connect( 'mongodb://localhost/exemploapi', { 'useMongoClient': true } )
 const getmoeda = ( Model ) => ( cotacao ) => ( query ) => 
   Model.findOne( query ).exec()
 
-module.exports = ( Model ) => ( {
-  getmoeda: getmoeda( Model )
-} )
+module.exports = ( Model ) => console.log('oi', Model)
+
+// ( {
+//   getmoeda: getmoeda( Model )
+// } )
