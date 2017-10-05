@@ -1,14 +1,17 @@
 const express = require( 'express' )
-const api = require( './api/api' )
 const app = express()
+
+const Model = require( './api/model' )
+console.log('------------------------------------');
+// console.log(Model);
+console.log('------------------------------------');
+const api = require( './api/api' )( Model )
 
 const BRL = api.getmoeda( 'brl' )
 
 app.get( '/', async function ( req, res ) {
-	// aqui deveria imprimir por exemplo { 'nome':'brl', valor: 1 }
-	const query = {}
-  let cot = await BRL(query)
-  // só pro exemplo
+  const query = {}
+  let cot = await BRL( query )
   res.send( cot )
 } )
 
